@@ -1,0 +1,42 @@
+# ใช้ PHP 7.4-apache เป็นอิมเมจพื้นฐาน (Debian-based)
+FROM php:7.4-apache
+
+# กำหนด Working Directory
+WORKDIR /var/www/html
+
+# ติดตั้ง Dependencies และ PHP Extensions ที่จำเป็นสำหรับ Laravel
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    libzip-dev \
+    libonig-dev \
+    zip \
+    unzip \
+    git \
+    curl \
+    # ตั้งค่า GD extension ให้รองรับ Freetype และ JPEG
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    # ติดตั้ง extensions
+    && docker-php-ext-install -j$(nproc) \
+    gd \
+    pdo_mysql \
+    bcmath \
+    mbstring \
+    zip
+
+# ติดตั้ง Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# เปิดใช้งาน mod_rewrite ของ Apache เพื่อให้ URL ของ Laravel ทำงานได้ถูกต้อง
+RUN a2enmod rewrite
+
+# คัดลอกไฟล์คอนฟิกของ Apache เข้าไปในอิมเมจ
+COPY apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+
+# คัดลอก entrypoint script ที่กำหนด permission และทำให้ execute ได้
+COPY php/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+CMD ["apache2-foreground"]

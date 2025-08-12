@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # PHP-FPM Service
+  app:
+    build:
+      context: ./docker
+      dockerfile: php/Containerfile
+    container_name: laravel_app
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www/html
+    ports:
+      - "8000:80" # ทำให้เข้าถึงโปรเจกต์ผ่าน http://localhost:8000
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - laravel-net
+    depends_on:
+      - db
+
+  # MariaDB Database Service
+  db:
+    image: mariadb:10.5 # เปลี่ยนมาใช้ MariaDB
+    container_name: laravel_db
+    restart: unless-stopped
+    ports:
+      - "3306:3306" # ทำให้เข้าถึงฐานข้อมูลผ่านพอร์ต 3306
+    tty: true
+    environment:
+      MARIADB_DATABASE: ${DB_DATABASE}
+      MARIADB_USER: ${DB_USERNAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - laravel-net
+
+# Networks
+networks:
+  laravel-net:
+    driver: bridge
+
+# Volumes
+volumes:
+  dbdata:
+    driver: local
