@@ -36,45 +36,43 @@ class WalletController extends Controller
          'trans' => $transaction, 'account' => $account]);
     }
 
-    public function sendPaymentRequest(Request $request){
-
-        if(!DB::table('user_accounts')->where('default', '=', 1)->first()){
-            $request->session()->flash('error', 'Please add  User Account!');
-                return redirect()->back();
+    public function sendPaymentRequest(Request $request)
+    {
+        // Use the UserAccount model for better readability and maintainability
+        if (!UserAccount::where('user_id', Auth::id())->where('default', 1)->exists()) {
+            return redirect()->back()->with('error', 'Please set a default User Account first!');
         }
-        
-        if($wallet = Wallet::where('user_id',  Auth::id())->first()) {
-            if($wallet->amount < $request->amount) {
-                $request->session()->flash('error', 'Insufficient Funds!');
-                return redirect()->back();
-            }elseif(!intval($request->amount) || $request->amount == ""){
-                $request->session()->flash('error', 'What are you doing!');
-                return redirect()->back();
-             }else {
-                if( intval($request->amount) < 1000 ) {
-                    $request->session()->flash('error', 'Minimum of 1000 please!');
-                    return redirect()->back();
-                }
 
-                $amount = intval($request->amount);
-                $wallet->amount = $wallet->amount - $amount;
-                $wallet->save();
-
-                $type = "Withdrawal";
-                Transaction::create(['user_id' => Auth::id(),
-                'amount' => $amount, 'type'=> $type, 'status' => 'pending']);
-
-                $request->session()->flash('success', 'Payment Request sent successfully!');
-
-                return redirect()->back();
-            }
-            
-            
-            
-        }else {
-            $request->session()->flash('error', 'Not Eligible!');
-
-            return redirect()->back();
+        $wallet = Wallet::where('user_id', Auth::id())->first();
+        if (!$wallet) {
+            return redirect()->back()->with('error', 'Not Eligible! Wallet not found.');
         }
+
+        $amount = filter_var($request->amount, FILTER_VALIDATE_INT);
+        if ($amount === false || $amount <= 0) {
+            return redirect()->back()->with('error', 'Invalid amount provided.');
+        }
+
+        if ($amount < 1000) {
+            return redirect()->back()->with('error', 'Minimum withdrawal amount is 1000.');
+        }
+
+        if ($wallet->amount < $amount) {
+            return redirect()->back()->with('error', 'Insufficient Funds!');
+        }
+
+        // Use a database transaction to ensure data integrity
+        DB::transaction(function () use ($wallet, $amount) {
+            $wallet->decrement('amount', $amount);
+
+            Transaction::create([
+                'user_id' => Auth::id(),
+                'amount' => $amount,
+                'type' => 'Withdrawal',
+                'status' => 'pending'
+            ]);
+        });
+
+        return redirect()->back()->with('success', 'Payment Request sent successfully!');
     }
 }

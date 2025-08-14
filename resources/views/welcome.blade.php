@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>MLM SOLUTION</title>
+        <title>{{__('web.mlm_solution')}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -68,12 +68,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">{{__('web.home')}}</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">{{__('web.login')}}</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">{{__('web.register')}}</a>
                         @endif
                     @endauth
                 </div>
@@ -81,13 +81,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    MLM SOLUTION
+                    {{__('web.mlm_solution')}}
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://twitter.com/ndiecodes">Twitter</a>
-                    <a href="https://github.com/ndiecodes">GitHub</a>
+                    <a href="https://laravel.com/docs">{{__('web.docs')}}</a>
+                    <a href="https://twitter.com/ndiecodes">{{__('web.twitter')}}</a>
+                    <a href="https://github.com/ndiecodes">{{__('web.github')}}</a>
                 </div>
             </div>
         </div>

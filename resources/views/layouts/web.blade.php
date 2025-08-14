@@ -38,7 +38,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">E-Earners</p>
+            <p class="loader__label">{{ __('web.loader_label') }}</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -65,7 +65,7 @@
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                        earners</span> </a>
+                        {{ __('web.logo_text') }}</span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -83,7 +83,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item">
                             <form class="app-search d-none d-md-block d-lg-block">
-                                <input type="text" class="form-control" placeholder="Search & enter">
+                                <input type="text" class="form-control" placeholder="{{ __('web.search_enter') }}">
                             </form>
                         </li>
                     </ul>
@@ -143,16 +143,16 @@
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/assets/images/users/default.png" alt="user" class=""> <span class="hidden-md-down">{{AUth::user()->username}} &nbsp;<i class="fa fa-angle-down"></i></span> </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <!-- text-->
-                                <a href="/profile" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
+                                <a href="/profile" class="dropdown-item"><i class="ti-user"></i> {{ __('web.my_profile') }}</a>
                                 <!-- text-->
-                                <a href="/wallet" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
+                                <a href="/wallet" class="dropdown-item"><i class="ti-wallet"></i> {{ __('web.my_balance') }}</a>
                                 <!-- text-->
                                 
                               
                                 <!-- text-->
                                 <div class="dropdown-divider"></div>
                                 <!-- text-->
-                                <a href="/logout" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                                <a href="/logout" class="dropdown-item"><i class="fa fa-power-off"></i> {{ __('web.logout') }}</a>
                                 <!-- text-->
                             </div>
                         </li>
@@ -178,45 +178,45 @@
                     <ul id="sidebarnav">
                         <!-- <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="/assets/images/users/default.png" alt="user-img" class="img-circle"><span class="hide-menu">{{Auth::user()->username}}</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
-                                <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
-                                <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-user"></i>{{ __('web.my_profile') }}</a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-wallet"></i>{{ __('web.my_balance') }}</a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i>{{ __('web.logout') }}</a></li>
                             </ul>
                         </li> -->
-                        <li class="nav-small-cap">--- PERSONAL</li>
-                        <li> <a class="waves-effect waves-dark" href="/home" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard </span></a>
+                        <li class="nav-small-cap">--- {{ __('web.personal') }}</li>
+                        <li> <a class="waves-effect waves-dark" href="/home" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">{{ __('web.dashboard') }} </span></a>
                            
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/wallet" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">Wallet</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/wallet" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">{{ __('web.wallet') }}</span></a>
     
                         </li>
-                        <li> <a class=" has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">Referrals</span></a>
+                        <li> <a class=" has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">{{ __('web.referrals') }}</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="/matrix">My Referrals</a></li>
-                                <li><a href="/not-activated">Pending Activation</a></li>
+                                <li><a href="/matrix">{{ __('web.my_referrals') }}</a></li>
+                                <li><a href="/not-activated">{{ __('web.pending_activation') }}</a></li>
                     
                             </ul>
                         </li>
                         
                         @if(Auth::user()->role == 'admin')
 
-                        <li class="nav-small-cap">--- ADMIN AREA</li>
-                        <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Pending</span></a>
+                        <li class="nav-small-cap">--- {{ __('web.admin_area') }}</li>
+                        <li> <a class="waves-effect waves-dark" href="/pending" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">{{ __('web.pending') }}</span></a>
                            
                         </li>
                        
-                        <li> <a class="waves-effect waves-dark" href="/payment" aria-expanded="false"><i class="fa fa-rouble"></i><span class="hide-menu">Withdrawal Request</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/payment" aria-expanded="false"><i class="fa fa-rouble"></i><span class="hide-menu">{{ __('web.withdrawal_request') }}</span></a>
                            
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/transactions" aria-expanded="false"><i class="fa fa-sort-amount-asc"></i><span class="hide-menu">Transactions</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/transactions" aria-expanded="false"><i class="fa fa-sort-amount-asc"></i><span class="hide-menu">{{ __('web.transactions') }}</span></a>
                            
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="/app-accounts" aria-expanded="false"><i class="fa fa-bank"></i><span class="hide-menu">Company Accounts</span></a>
+                        <li> <a class="waves-effect waves-dark" href="/app-accounts" aria-expanded="false"><i class="fa fa-bank"></i><span class="hide-menu">{{ __('web.company_accounts') }}</span></a>
                            
                            </li>
                         @endif
-                        <li class="nav-small-cap">--- OTHERS</li>
-                        <li> <a class="waves-effect waves-dark" href="/logout" aria-expanded="false"><i class="fa fa-power-off text-danger"></i><span class="hide-menu">Log Out</span></a></li>
+                        <li class="nav-small-cap">--- {{ __('web.others') }}</li>
+                        <li> <a class="waves-effect waves-dark" href="/logout" aria-expanded="false"><i class="fa fa-power-off text-danger"></i><span class="hide-menu">{{ __('web.log_out') }}</span></a></li>
                        
                     </ul>
                 </nav>
@@ -245,7 +245,7 @@
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">{{ __('web.home') }}</a></li>
                                @yield('breadli')
                             </ol>
                             
@@ -276,17 +276,17 @@
                 <!-- .right-sidebar -->
                 <div class="right-sidebar">
                     <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+                        <div class="rpanel-title"> {{ __('web.service_panel') }} <span><i class="ti-close right-side-toggle"></i></span> </div>
                         <div class="r-panel-body">
                             <ul id="themecolors" class="m-t-20">
-                                <li><b>With Light sidebar</b></li>
+                                <li><b>{{ __('web.light_sidebar') }}</b></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-default" class="default-theme">1</a></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-green" class="green-theme">2</a></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-red" class="red-theme">3</a></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-blue" class="blue-theme working">4</a></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-purple" class="purple-theme">5</a></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-megna" class="megna-theme">6</a></li>
-                                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                                <li class="d-block m-t-30"><b>{{ __('web.dark_sidebar') }}</b></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-default-dark" class="default-dark-theme ">7</a></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-green-dark" class="green-dark-theme">8</a></li>
                                 <li><a href="javascript:void(0)" data-skin="skin-red-dark" class="red-dark-theme">9</a></li>
@@ -313,7 +313,7 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            © 2018 e-earners, All Rights Reserved.
+            {{ __('web.copyright') }}
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->

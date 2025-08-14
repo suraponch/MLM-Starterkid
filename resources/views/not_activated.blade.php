@@ -1,26 +1,26 @@
 @extends('layouts.web')
 
-@section('title', "referrals not activated || e-earners")
+@section('title', __('web.referrals_not_activated') . ' || e-earners')
 
-@section('breadtitle', "Pending Activation")
+@section('breadtitle', __('web.pending_activation'))
 
 @section('breadli')
-<li class="breadcrumb-item active">not activated</li>               
+<li class="breadcrumb-item active">{{__('web.not_activated')}}</li>               
 @endsection
 
 @section('content')
 <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Your referrals yet to activate</h4>
+                                <h4 class="card-title">{{__('web.your_referrals_yet_to_activate')}}</h4>
                               
                                 <div class="table-responsive">
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Username</th>
+                                                <th>{{__('web.name')}}</th>
+                                                <th>{{__('web.username')}}</th>
                                              
-                                                <th>Joined</th>
+                                                <th>{{__('web.joined')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>

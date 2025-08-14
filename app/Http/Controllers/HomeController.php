@@ -30,22 +30,6 @@ class HomeController extends Controller
         $this->middleware('auth')->except('mail');
     }
 
-    public function levelAmount($level){
-        if($level == 1){
-            return 3000;
-        }else if($level == 2){
-            return 2500;
-        }else if($level == 3){
-            return 5000;
-        }else if($level == 4){
-            return 16000;
-        }else if($level == 5){
-            return 56000;
-        }else if($level == 6){
-            return 350000;
-        }
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -101,17 +85,6 @@ class HomeController extends Controller
           return back();
       }
   
-  
-
-      //this will build tree from flat array in database if project demands it
-      public function buildTree($items) {
-          $children = array();
-          foreach($items as $item)
-              $children[$item->parent_id][] = $item;
-          foreach($items as $item) if (isset($children[$item->id]))
-              $item->children = $children[$item->id];
-          return $children;
-      }
       public function index()
       {
           $data['upline'] = User::find(Auth::user()->parent_id);
@@ -135,10 +108,9 @@ class HomeController extends Controller
         //                     ->where('user_id', '=', Auth::id())
         //                     ->sum('amount');
 
-          $data['paystack_key'] = env('PAYSTACK_PUBLIC_KEY');
-
-            $levelTo = Auth::user()->level + 1;
-          $data['pay_amount'] = $this->levelAmount($levelTo);
+        $data['paystack_key'] = env('PAYSTACK_PUBLIC_KEY');
+        $levelTo = Auth::user()->level + 1;
+        $data['pay_amount'] = $this->getPaymentForLevel($levelTo);
           
           
           return view('home2')->with($data);

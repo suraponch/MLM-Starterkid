@@ -1,26 +1,26 @@
 @extends('layouts.web')
 
-@section('title', "App accounts || e-earners")
+@section('title', __('web.app_accounts_title') . ' || e-earners')
 
-@section('breadtitle', "Company Accounts")
+@section('breadtitle', __('web.company_accounts'))
 
 @section('breadli')
-<li class="breadcrumb-item active">app_accounts</li>               
+<li class="breadcrumb-item active">{{__('web.app_accounts_title')}}</li>               
 @endsection
 
 @section('content')
 <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Company Accounts</h4>
-                                <button data-toggle="modal" data-target="#create" class="btn btn-info btn-sm"><i class="fa fa-plus-circle"></i> Add New</button>
+                                <h4 class="card-title">{{__('web.company_accounts')}}</h4>
+                                <button data-toggle="modal" data-target="#create" class="btn btn-info btn-sm"><i class="fa fa-plus-circle"></i> {{__('web.add_new')}}</button>
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Account Name</th>
-                                                <th>Account No</th>
-                                                <th>Bank Name</th>
-                                                <th>Action</th>
+                                                <th>{{__('web.account_name')}}</th>
+                                                <th>{{__('web.account_number')}}</th>
+                                                <th>{{__('web.bank_name')}}</th>
+                                                <th>{{__('web.action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -40,7 +40,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Edit Account</h4>
+                                                <h4 class="modal-title">{{__('web.edit_account')}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <form method="post" action="/app-accounts/{{$account->id}}">
@@ -48,21 +48,21 @@
                                                 
                                                         @csrf
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Account Name:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.account_name')}}:</label>
                                                         <input type="text" class="form-control" name="account_name" value="{{$account->account_name}}" >
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Account Number</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.account_number')}}</label>
                                                         <input type="text" class="form-control" name="account_no" id="recipient-name" value="{{$account->account_no}}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Bank Name</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.bank_name')}}</label>
                                                         <input type="text" class="form-control" name="bank_name" id="recipient-name" value="{{$account->bank_name}}">
                                                     </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-success waves-effect waves-light">Update</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">{{__('web.close')}}</button>
+                                                <button type="submit" class="btn btn-success waves-effect waves-light">{{__('web.update')}}</button>
                                              
                                             </div>
                                             </form>
@@ -74,7 +74,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Edit Account</h4>
+                                                <h4 class="modal-title">{{__('web.edit_account')}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <form method="get" action="/app-accounts/{{$account->id}}">
@@ -83,13 +83,13 @@
                                                         @csrf
 
                                                     <div class="alert alert-danger" role="alert">
-                                                        Are you sure you want to delete {{$account->account_no}}?
+                                                        {{__('web.confirm_delete_account', ['account_no' => $account->account_no])}}
                                                     </div>
                                                  
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-danger waves-effect waves-light">Delete</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">{{__('web.close')}}</button>
+                                                <button type="submit" class="btn btn-danger waves-effect waves-light">{{__('web.delete')}}</button>
                                              
                                             </div>
                                             </form>
@@ -108,7 +108,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Add New Account</h4>
+                                                <h4 class="modal-title">{{__('web.add_new_account')}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <form method="post" action="/app-accounts">
@@ -116,21 +116,21 @@
                                                 
                                                         @csrf
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Account Name:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.account_name')}}:</label>
                                                         <input type="text" class="form-control" name="account_name" >
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Account Number</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.account_number')}}</label>
                                                         <input type="text" class="form-control" name="account_no" id="recipient-name" >
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Bank Name</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.bank_name')}}</label>
                                                         <input type="text" class="form-control" name="bank_name" id="recipient-name" >
                                                     </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">{{__('web.close')}}</button>
+                                                <button type="submit" class="btn btn-success waves-effect waves-light">{{__('web.submit')}}</button>
                                              
                                             </div>
                                             </form>

@@ -1,27 +1,27 @@
 @extends('layouts.web')
 
-@section('title', "Referrals || e-earners")
+@section('title', __('web.referrals') . ' || e-earners')
 
-@section('breadtitle', "My Referrals")
+@section('breadtitle', __('web.my_referrals'))
 
 @section('breadli')
-<li class="breadcrumb-item active">Referrals</li>               
+<li class="breadcrumb-item active">{{__('web.referrals')}}</li>               
 @endsection
 
 @section('content')
          
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Level One Referrals</h4>
+                                <h4 class="card-title">{{__('web.level_one_referrals')}}</h4>
                               
                                 <div class="table-responsive">
                                     <table id="one" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Username</th>
-                                                <th>level</th>
-                                                <th>Joined</th>
+                                                <th>{{__('web.name')}}</th>
+                                                <th>{{__('web.username')}}</th>
+                                                <th>{{__('web.level')}}</th>
+                                                <th>{{__('web.joined')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -48,16 +48,16 @@
          
          <div class="card">
              <div class="card-body">
-                 <h4 class="card-title">Level Two Referrals</h4>
+                 <h4 class="card-title">{{__('web.level_two_referrals')}}</h4>
                
                  <div class="table-responsive">
                      <table id="two" class="table table-bordered table-striped">
                          <thead>
                              <tr>
-                                 <th>Name</th>
-                                 <th>Username</th>
-                                 <th>level</th>
-                                 <th>Joined</th>
+                                 <th>{{__('web.name')}}</th>
+                                 <th>{{__('web.username')}}</th>
+                                 <th>{{__('web.level')}}</th>
+                                 <th>{{__('web.joined')}}</th>
                              </tr>
                          </thead>
                          <tbody>
@@ -84,16 +84,16 @@
          
          <div class="card">
              <div class="card-body">
-                 <h4 class="card-title">Level Three Referrals</h4>
+                 <h4 class="card-title">{{__('web.level_three_referrals')}}</h4>
                
                  <div class="table-responsive">
                      <table id="three" class="table table-bordered table-striped">
                          <thead>
                              <tr>
-                                 <th>Name</th>
-                                 <th>Username</th>
-                                 <th>level</th>
-                                 <th>Joined</th>
+                                 <th>{{__('web.name')}}</th>
+                                 <th>{{__('web.username')}}</th>
+                                 <th>{{__('web.level')}}</th>
+                                 <th>{{__('web.joined')}}</th>
                              </tr>
                          </thead>
                          <tbody>
@@ -121,16 +121,16 @@
          
          <div class="card">
              <div class="card-body">
-                 <h4 class="card-title">Level Four Referrals</h4>
+                 <h4 class="card-title">{{__('web.level_four_referrals')}}</h4>
                
                  <div class="table-responsive">
                      <table id="three" class="table table-bordered table-striped">
                          <thead>
                              <tr>
-                                 <th>Name</th>
-                                 <th>Username</th>
-                                 <th>level</th>
-                                 <th>Joined</th>
+                                 <th>{{__('web.name')}}</th>
+                                 <th>{{__('web.username')}}</th>
+                                 <th>{{__('web.level')}}</th>
+                                 <th>{{__('web.joined')}}</th>
                              </tr>
                          </thead>
                          <tbody>
@@ -157,16 +157,16 @@
          
          <div class="card">
              <div class="card-body">
-                 <h4 class="card-title">Level Five Referrals</h4>
+                 <h4 class="card-title">{{__('web.level_five_referrals')}}</h4>
                
                  <div class="table-responsive">
                      <table id="three" class="table table-bordered table-striped">
                          <thead>
                              <tr>
-                                 <th>Name</th>
-                                 <th>Username</th>
-                                 <th>level</th>
-                                 <th>Joined</th>
+                                 <th>{{__('web.name')}}</th>
+                                 <th>{{__('web.username')}}</th>
+                                 <th>{{__('web.level')}}</th>
+                                 <th>{{__('web.joined')}}</th>
                              </tr>
                          </thead>
                          <tbody>
@@ -193,16 +193,16 @@
          
          <div class="card">
              <div class="card-body">
-                 <h4 class="card-title">Level Six Referrals</h4>
+                 <h4 class="card-title">{{__('web.level_six_referrals')}}</h4>
                
                  <div class="table-responsive">
                      <table id="three" class="table table-bordered table-striped">
                          <thead>
                              <tr>
-                                 <th>Name</th>
-                                 <th>Username</th>
-                                 <th>level</th>
-                                 <th>Joined</th>
+                                 <th>{{__('web.name')}}</th>
+                                 <th>{{__('web.username')}}</th>
+                                 <th>{{__('web.level')}}</th>
+                                 <th>{{__('web.joined')}}</th>
                              </tr>
                          </thead>
                          <tbody>

@@ -1,11 +1,11 @@
 @extends('layouts.web')
 
-@section('title', "Pending || e-earners")
+@section('title', __('web.pending') . ' || e-earners')
 
-@section('breadtitle', "Pending Activation")
+@section('breadtitle', __('web.pending_activation'))
 
 @section('breadli')
-<li class="breadcrumb-item active">pending</li>               
+<li class="breadcrumb-item active">{{__('web.pending')}}</li>               
 @endsection
 
 @section('content')
@@ -14,18 +14,18 @@
                 <!-- ============================================================== -->
                 <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Pending Users</h4>
-                                <h6 class="card-subtitle">Total Users: {{$allusers}} </h6>
-                                <h6 class="card-subtitle">Activated:  {{$activated}} </h6>
+                                <h4 class="card-title">{{__('web.pending_users')}}</h4>
+                                <h6 class="card-subtitle">{{__('web.total_users')}}: {{$allusers}} </h6>
+                                <h6 class="card-subtitle">{{__('web.activated')}}:  {{$activated}} </h6>
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Username</th>
-                                                <th>Joined</th>
-                                                <th>Action</th>
+                                                <th>{{__('web.name')}}</th>
+                                                <th>{{__('web.email')}}</th>
+                                                <th>{{__('web.username')}}</th>
+                                                <th>{{__('web.joined')}}</th>
+                                                <th>{{__('web.action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -36,7 +36,7 @@
                                                 <td>{{$user->username}}</td>
                                                 <td>{{$user->created_at}}</td>
                                                 <td>
-                                                <button  data-toggle="modal" data-target="#daModal{{$user->id}}" class="btn btn-warning btn-sm">Activate</button>
+                                                <button  data-toggle="modal" data-target="#daModal{{$user->id}}" class="btn btn-warning btn-sm">{{__('web.activate')}}</button>
                                                 </td>
                                             </tr>
 
@@ -45,7 +45,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Activate user</h4>
+                                                <h4 class="modal-title">{{__('web.activate_user_modal_title')}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <form method="post" action="/activate-user">
@@ -53,17 +53,17 @@
                                                 
                                                         @csrf
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Username:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.username')}}:</label>
                                                         <input type="text" class="form-control" name="username" value="{{$user->username}}" readonly>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Referrer</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.referrer')}}</label>
                                                         <input type="text" class="form-control" name="by"id="recipient-name" value="{{$user->referrer}}" readonly>
                                                     </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-danger waves-effect waves-light">Activate User</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">{{__('web.close')}}</button>
+                                                <button type="submit" class="btn btn-danger waves-effect waves-light">{{__('web.activate_user')}}</button>
                                              
                                             </div>
                                             </form>

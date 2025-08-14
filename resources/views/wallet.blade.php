@@ -1,11 +1,11 @@
 @extends('layouts.web')
 
-@section('title', "Wallet|| e-earners")
+@section('title', __('web.wallet') . ' || e-earners')
 
-@section('breadtitle', "Wallet")
+@section('breadtitle', __('web.wallet'))
 
 @section('breadli')
-<li class="breadcrumb-item active">Wallet</li>               
+<li class="breadcrumb-item active">{{__('web.wallet')}}</li>               
 @endsection
 
 @section('content')
@@ -18,8 +18,8 @@
                            
                                 <div class="row">
                                     <div class="col-12">
-                                        <h3 class="text-success">₦{{ !$wallet ? 0 : number_format($wallet->amount) }}</h3>
-                                        <h6 class="card-subtitle">Balance</h6></div>
+                                        <h3 class="text-success">฿{{ !$wallet ? 0 : number_format($wallet->amount) }}</h3>
+                                        <h6 class="card-subtitle">{{__('web.balance')}}</h6></div>
                                     <div class="col-12">
                                         <div class="progress">
                                             <div class="progress-bar bg-info" role="progressbar" style="width: 100%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -33,25 +33,25 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="card">
                             <div class="card-body">
-                            <h6 class="card-subtitle">Minimum Withdrawal: ₦1000</h6>
+                            <h6 class="card-subtitle">{{__('web.minimum_withdrawal')}}</h6>
                                 <div class="row">
                                     <div class="col-12">
-                                    <form method="post" action="/send-payment-request">
-                                    @csrf
-                                    <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text bg-light">₦</span>
+                                        <form method="post" action="/send-payment-request">
+                                        @csrf
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-light">฿</span>
+                                                </div>
+                                                <input type="number" class="form-control" name="amount" placeholder="{{__('web.amount')}}" required min="1000" step="1">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text bg-light">.00</span>
+                                                </div>
                                             </div>
-                                            <input type="text" class="form-control" name="amount" placeholder="Amount">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text bg-light">.00</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-outline-danger"> Withdraw</button>
+                                        <button class="btn btn-outline-danger"> {{__('web.withdraw')}}</button>
                                     </div>
-                                    </form>
+                                        </form>
                                 </div>
                             </div>
                         </div>
@@ -60,28 +60,27 @@
                      <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
-                            @if(!$account)
-                            <a href="javascript:void(0)"  data-toggle="modal" data-target="#daModal" class="btn btn-outline-success float-right mb-2">Add Account</a>
-                            @else
-                            <a href="javascript:void(0)"  data-toggle="modal" data-target="#daModal1" class="btn btn-outline-info float-right mb-2">Edit Account</a>
-                            @endif
-                            <div class="clearfix"></div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h6 class="text-dark">Acount Name:</h6>
-                                        <h6 class="text-info">{{ $account ? $account->account_name : "Nil"}}</h6>
-                                        <h6 class="text-dark">Account Number:</h6>
-                                        <h5 class="text-info">{{$account ? $account->account_no : "Nil"}}</h5>
-                                        <h6 class="text-dark">Bank Name:</h6>
-                                        <h6 class="text-info">{{$account ? $account->bank_name : "Nil"}}</h6>
-
+                                @if(!$account)
+                                    <a href="javascript:void(0)"  data-toggle="modal" data-target="#daModal" class="btn btn-outline-success float-right mb-2">{{__('web.add_account')}}</a>
+                                @else
+                                    <a href="javascript:void(0)"  data-toggle="modal" data-target="#daModal1" class="btn btn-outline-info float-right mb-2">{{__('web.edit_account')}}</a>
+                                @endif
+                                    <div class="clearfix"></div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h6 class="text-dark">{{__('web.account_name')}}:</h6>
+                                            <h6 class="text-info">{{ $account ? $account->account_name : "Nil"}}</h6>
+                                            <h6 class="text-dark">{{__('web.account_number')}}:</h6>
+                                            <h5 class="text-info">{{$account ? $account->account_no : "Nil"}}</h5>
+                                            <h6 class="text-dark">{{__('web.bank_name')}}:</h6>
+                                            <h6 class="text-info">{{$account ? $account->bank_name : "Nil"}}</h6>
                                         </div>
-                                    <div class="col-12">
-                                        <div class="progress">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="col-12">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -94,7 +93,7 @@
     <div class="col-lg-4 col-md-4">
                         <div class="card">
                             <div class="card-body">
-                            <h6 class="card-subtitle">Fund Other Users Wallet</h6>
+                            <h6 class="card-subtitle">{{__('web.fund_other_users_wallet')}}</h6>
                                 <div class="row">
                                     <div class="col-12">
                                     <form method="post" action="/fund">
@@ -102,22 +101,22 @@
                                     <div class="input-group mb-3">
                                             <div class="form-group">
     
-                                                    <input id="fuser" type="text" class="form-control" name="username" placeholder="Username">
+                                                    <input id="fuser" type="text" class="form-control" name="username" placeholder="{{__('web.username')}}">
                                                     <p class="text-info" id="fdetails"> </p>
                                                    
                                             </div>
 
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text bg-light">₦</span>
+                                                <span class="input-group-text bg-light">฿</span>
                                             </div>
-                                            <input type="text" class="form-control" name="amount" placeholder="Amount">
+                                            <input type="text" class="form-control" name="amount" placeholder="{{__('web.amount')}}">
                                             <div class="input-group-append">
                                                 <span class="input-group-text bg-light">.00</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-outline-success"> Fund</button>
+                                        <button class="btn btn-outline-success"> {{__('web.fund')}}</button>
                                     </div>
                                     </form>
                                 </div>
@@ -170,7 +169,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Edit Bank Details</h4>
+                                                <h4 class="modal-title">{{__('web.edit_bank_details')}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <form method="post" action="/user-accounts/{{$account ? $account->id : ''}}">
@@ -179,22 +178,22 @@
                                                         @csrf
                                                   
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Account Name:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.account_name')}}:</label>
                                                         <input type="text" class="form-control" name="account_name" value="{{$account ? $account->account_name : ''}}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Account Number:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.account_number')}}:</label>
                                                         <input type="text" class="form-control" name="account_no" value="{{$account ? $account->account_no : ''}}">
                                                     </div>
 
                                                       <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Bank Name:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.bank_name')}}:</label>
                                                         <input type="text" class="form-control" name="bank_name" value="{{$account ? $account->bank_name :''}}">
                                                     </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">{{__('web.close')}}</button>
+                                                <button type="submit" class="btn btn-success waves-effect waves-light">{{__('web.submit')}}</button>
                                              
                                             </div>
                                             </form>
@@ -207,7 +206,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Add Bank Details</h4>
+                                                <h4 class="modal-title">{{__('web.add_bank_details')}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <form method="post" action="/user-accounts">
@@ -216,21 +215,21 @@
                                                         @csrf
                                                    
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Account Name:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.account_name')}}:</label>
                                                         <input type="text" class="form-control" name="account_name"id="recipient-name">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Account Number:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.account_number')}}:</label>
                                                         <input type="text" class="form-control" name="account_no"id="recipient-name">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="recipient-name" class="control-label">Bank Name:</label>
+                                                        <label for="recipient-name" class="control-label">{{__('web.bank_name')}}:</label>
                                                         <input type="text" class="form-control" name="bank_name">
                                                     </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">{{__('web.close')}}</button>
+                                                <button type="submit" class="btn btn-success waves-effect waves-light">{{__('web.submit')}}</button>
                                              
                                             </div>
                                             </form>
@@ -238,34 +237,34 @@
                                     </div>
                                 </div>
 
-          <div class="card mt-5">
-                            <div class="card-body">
-                                <h4 class="card-title">Transactions</h4>
-                                <!-- <h6 class="card-subtitle">Users under probation</h6> -->
-                                <div class="table-responsive ">
-                                    <table id="myTabl" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Type</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
-                                                <th>Date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($trans as $tran)
-                                            <tr>
-                                                <td>{{$tran->type}}</td>
-                                                <td>{{$tran->amount}}</td>
-                                                <td>{{$tran->status}}</td>
-                                                <td>{{$tran->created_at}}</td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h4 class="card-title">{{__('web.transactions')}}</h4>
+                    <!-- <h6 class="card-subtitle">Users under probation</h6> -->
+                    <div class="table-responsive ">
+                        <table id="myTabl" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>{{__('web.type')}}</th>
+                                    <th>{{__('web.amount')}}</th>
+                                    <th>{{__('web.status')}}</th>
+                                    <th>{{__('web.date')}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($trans as $tran)
+                                <tr>
+                                    <td>{{$tran->type}}</td>
+                                    <td>{{$tran->amount}}</td>
+                                    <td>{{$tran->status}}</td>
+                                    <td>{{$tran->created_at}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
                        
 
 @endsection

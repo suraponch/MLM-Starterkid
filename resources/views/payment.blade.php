@@ -1,30 +1,30 @@
 @extends('layouts.web')
-@section('title', "Payment || e-earners")
+@section('title', __('web.payment') . ' || e-earners')
 
-@section('breadtitle', "Withdrawal Request")
+@section('breadtitle', __('web.withdrawal_request'))
 
 @section('breadli')
-<li class="breadcrumb-item active">Withdrawal</li>               
+<li class="breadcrumb-item active">{{__('web.withdrawal')}}</li>               
 @endsection
 
 @section('content')
                     <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Withdrawal Request</h4>
-                                <h6 class="card-subtitle">Pay every 24hrs</h6>
+                                <h4 class="card-title">{{__('web.withdrawal_request')}}</h4>
+                                <h6 class="card-subtitle">{{__('web.pay_every_24hrs')}}</h6>
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Amount</th>
-                                                <th>Username</th>
-                                                <th>Email</th>
+                                                <th>{{__('web.name')}}</th>
+                                                <th>{{__('web.amount')}}</th>
+                                                <th>{{__('web.username')}}</th>
+                                                <th>{{__('web.email')}}</th>
                                                
-                                                <th>Phone</th>
-                                                <th>Level</th>
-                                                <th>Balance</th>
-                                                <th>Action</th>
+                                                <th>{{__('web.phone')}}</th>
+                                                <th>{{__('web.level')}}</th>
+                                                <th>{{__('web.balance')}}</th>
+                                                <th>{{__('web.action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -48,7 +48,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Activate user</h4>
+                                                <h4 class="modal-title">{{__('web.activate_user_modal_title')}}</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <form method="post" action="/payment/{{$user->trans_id}}">
@@ -56,11 +56,11 @@
                                                 
                                                         @csrf
 
-                                                                <h5>Bank name:&nbsp;  {{$user->bank_name}}</h5>
-                                                                <h5>Account name: &nbsp; {{$user->account_name}}</h5>
-                                                                <h5>Account no:&nbsp; <b> {{$user->account_no}}</b></h5>
-                                                                <h5>Username:&nbsp;  {{$user->username}}</h5>
-                                                                <h5>Amount:&nbsp;   {{$user->amount}}</h5>
+                                                                <h5>{{__('web.bank_name')}}:&nbsp;  {{$user->bank_name}}</h5>
+                                                                <h5>{{__('web.account_name')}}: &nbsp; {{$user->account_name}}</h5>
+                                                                <h5>{{__('web.account_number')}}:&nbsp; <b> {{$user->account_no}}</b></h5>
+                                                                <h5>{{__('web.username')}}:&nbsp;  {{$user->username}}</h5>
+                                                                <h5>{{__('web.amount')}}:&nbsp;   {{$user->amount}}</h5>
                                             
                                                     
                                                     <div class="form-group">
@@ -69,11 +69,11 @@
                                                     </div>
                                                                                             
 
-                                                 <span class="text-danger">Ensure user has been paid before payment confirmation!! </span>  
+                                                 <span class="text-danger">{{__('web.ensure_user_paid_message')}} </span>  
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-danger waves-effect waves-light">Confirm payment has been made!</button>
+                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">{{__('web.close')}}</button>
+                                                <button type="submit" class="btn btn-danger waves-effect waves-light">{{__('web.confirm_payment_made')}}</button>
                                              
                                             </div>
                                             </form>
