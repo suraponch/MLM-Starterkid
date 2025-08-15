@@ -202,7 +202,7 @@ $upgradeParams = [
         var handler = PaystackPop.setup({
             key: '{{$paystack_key}}',
             email: '{{Auth::user()->email}}',
-            amount: {{$pay_amount * 100}},
+            // amount: {{$pay_amount * 100}},
             currency: "NGN",
             ref: '' + Math.floor((Math.random() * 1000000000) + 1),
             metadata: {

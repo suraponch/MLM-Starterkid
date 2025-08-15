@@ -99,6 +99,7 @@ return [
     'not_activated' => 'ยังไม่ได้เปิดใช้งาน',
     'total_benefits' => 'ผลประโยชน์ทั้งหมด',
     'total_withdrawal' => 'การถอนเงินทั้งหมด',
+    'joined' => 'เข้าร่วมเมื่อ',
     'referral_link' => 'ลิงก์แนะนำ',
     'sponsor_details' => 'รายละเอียดผู้แนะนำ',
     'how_it_works' => 'วิธีการทำงาน',
@@ -106,7 +107,6 @@ return [
     'js_processing' => 'กำลังดำเนินการ...',
     'js_transaction_failed' => 'การทำธุรกรรมล้มเหลว: :error',
     'js_activate_button' => 'เปิดใช้งานบัญชีของคุณ',
-    // The rest of the old Home2 page keys can be removed if they are no longer used.
 
     // How it works Table
     'hwi_l1_title' => 'ระดับ 1: (เปิดใช้งาน). จ่าย ฿2000',
@@ -136,7 +136,6 @@ return [
 
     // Matrix page
     'level_one_referrals' => 'ผู้แนะนำระดับหนึ่ง',
-    'name' => 'ชื่อ',
     'level_two_referrals' => 'ผู้แนะนำระดับสอง',
     'level_three_referrals' => 'ผู้แนะนำระดับสาม',
     'level_four_referrals' => 'ผู้แนะนำระดับสี่',
@@ -161,6 +160,7 @@ return [
     'activated' => 'เปิดใช้งานแล้ว',
     'activate' => 'เปิดใช้งาน',
     'referrer' => 'ผู้แนะนำ',
+    'activate_user' => 'เปิดใช้งานผู้ใช้',
 
     // Send Mail page
     'send_mail' => 'ส่งอีเมล',

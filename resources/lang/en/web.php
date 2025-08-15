@@ -83,92 +83,7 @@ return [
     'delete' => 'Delete',
     'add_new_account' => 'Add New Account',
 
-    // Payment page
-    'payment' => 'Payment',
-    'withdrawal' => 'Withdrawal',
-    'pay_every_24hrs' => 'Pay every 24hrs',
-    'activate_user_modal_title' => 'Activate user',
-    'ensure_user_paid_message' => 'Ensure user has been paid before payment confirmation!!',
-    'confirm_payment_made' => 'Confirm payment has been made!',
-
-    // Pending page
-    'pending_users' => 'Pending Users',
-    'total_users' => 'Total Users',
-    'activated' => 'Activated',
-    'activate' => 'Activate',
-    'referrer' => 'Referrer',
-
-    // Send Mail page
-    'send_mail' => 'Send Mail',
-    'subject' => 'Subject',
-    'message' => 'Message',
-    'send' => 'Send',
-
-    // Transactions page
-    'incoming_and_outgoing' => 'incoming and outgoing',
-
-    // Welcome page
-    'mlm_solution' => 'MLM SOLUTION',
-    'docs' => 'Docs',
-    'twitter' => 'Twitter',
-    'github' => 'GitHub',
-
-    // Example Component
-    'example_component_title' => 'Example Component',
-    'example_component_text' => 'I\'m an example component.',
-
-    // Home2 page
-    'activate_account_message' => 'Activate your account with ₦3,000 to earn ₦5000(plus referral bonus) ; accounts not activated is deleted in 2days. Click <b>"How To?"</b> bellow.',
-    'upgrade_level_2_message' => 'Upgrade to Level 2 with ₦2,500 to earn ₦10,000. Check wallet balance to see if you have enough to upgrade!',
-    'upgrade_level_3_message' => 'Upgrade to Level 3 with ₦5,000 to earn ₦40,000. Check wallet balance to see if you have enough to upgrade!',
-    'upgrade_level_4_message' => 'Upgrade to Level 4 with ₦16,000 to earn ₦256,000. Check wallet balance to see if you have enough to upgrade!',
-    'upgrade_level_5_message' => 'Upgrade to Level 5 with ₦56,000 to earn ₦1,792,000. Check wallet balance to see if you have enough to upgrade!',
-    'upgrade_level_6_message' => 'Upgrade to Level 6 with ₦350,000 to earn ₦22,400,000. Check wallet balance to see if you have enough to upgrade!',
-    'upgrade_to_next_level' => 'Upgrade to next Level',
-    'select_preferred_upgrade_method' => 'Select Prefered Upgrade method!!',
-    'upgrade_with_wallet_balance' => 'Upgrade with Wallet Balance',
-    'upgrade_with_credit_card' => 'Upgrade with Credit Card',
-    'make_payment' => 'Make Payment',
-    'user_summary' => 'User Summary',
-    'activate_your_account' => 'Activate Your Account',
-    'you_did_it' => 'You did it!',
-    'level' => 'Level',
-    'not_activated' => 'Not activated',
-    'total_benefits' => 'Total Benefits',
-    'total_withdrawal' => 'Total Withdrawal',
-    'joined' => 'Joined',
-    'referral_link' => 'Referral Link',
-    'sponsor_details' => 'Sponsor Details',
-    'name' => 'Name',
-    'email' => 'Email',
-    'how_it_works' => 'How it works',
-    'strategy_to_reach_goals' => 'HERE IS A STRATEGY THAT WILL ENABLE YOU TO REACH YOUR GOALS',
-    'level_1_activation' => 'LEVEL 1: (Activation). Pay ₦2000',
-    'level_1_profit' => 'Get 2 (downlines) x ₦1,500 = ₦3,000 – ₦2,500 (move to 2) = ₦500 profit',
-    'level_2_upgrade' => 'LEVEL 2: (Upgrade). Pay ₦2,500',
-    'level_2_profit' => '4 ( level 2 downlines) x ₦2,500 = ₦10,000 – ₦5,000 (move to 3) = ₦5,000 profit',
-    'level_3_upgrade' => 'LEVEL 3: (Upgrade). Pay ₦5,000',
-    'level_3_profit' => '8 (level 3 downlines) x ₦5,000 = ₦40,000 – ₦16,000 (move to 4) = ₦24,000 profit',
-    'level_4_upgrade' => 'LEVEL 4: (Upgrade). Pay ₦16,000',
-    'level_4_profit' => '16 (level 4 downlines) x ₦16,000 = ₦256,000 – ₦56,000 (move to 5) = ₦200,000 profit',
-    'level_5_upgrade' => 'LEVEL 5: (Upgrade). Pay ₦56,000',
-    'level_5_profit' => '32 ( level 5 downlines) x ₦56,000 = ₦1,792,000 – ₦350,000 (move to 5) = ₦1,442,000 profit',
-    'level_6_upgrade' => 'LEVEL 6: (Upgrade). Pay ₦350,000',
-    'level_6_profit' => '64 (level 6 downlines) x ₦56,000 = ₦22,400,000 (all yours)',
-    'no_more_upgrades' => 'No More upgrades',
-    'bonus' => 'Bonus',
-    'referral_bonus_message' => '₦1000 referral bonus for each person who registers through your referral link.',
-    'upgrade_to_level_2' => 'Upgrade to level 2',
-    'n2000_upgrade_message' => 'N2000 will be used to upgrade to level 2',
-    'use_balance' => 'Use Balance',
-    'use_paystack' => 'Use Paystack',
-    'activate_user' => 'Activate User',
-    'processing' => 'Processing...',
-    'mobile_number' => 'Mobile Number',
-    'not_found' => 'Not Found',
-    'opps' => 'Opps!',
-
-    // Dashboard / Home2 Page
+    // Dashboard / Home2 Page (Cleaned up and consolidated)
     'dashboard_title' => 'Dashboard',
     'activate_account' => 'Activate your account with ₦:activation_fee to earn ₦:earning (plus referral bonus) ; accounts not activated is deleted in 2days. Click <b>"How To?"</b> bellow.',
     'upgrade_level' => 'Upgrade to Level :level with ₦:upgrade_fee to earn ₦:earning. Check wallet balance to see if you have enough to upgrade!',
@@ -184,6 +99,7 @@ return [
     'not_activated' => 'Not activated',
     'total_benefits' => 'Total Benefits',
     'total_withdrawal' => 'Total Withdrawal',
+    'joined' => 'Joined',
     'referral_link' => 'Referral Link',
     'sponsor_details' => 'Sponsor Details',
     'how_it_works' => 'How it works',
@@ -220,7 +136,6 @@ return [
 
     // Matrix page
     'level_one_referrals' => 'Level One Referrals',
-    'name' => 'Name',
     'level_two_referrals' => 'Level Two Referrals',
     'level_three_referrals' => 'Level Three Referrals',
     'level_four_referrals' => 'Level Four Referrals',
@@ -228,6 +143,41 @@ return [
     'level_six_referrals' => 'Level Six Referrals',
 
     // Not Activated page
-    'referrals_not_activated' => 'referrals not activated',
+    'referrals_not_activated' => 'Referrals not activated',
     'your_referrals_yet_to_activate' => 'Your referrals yet to activate',
+
+    // Payment page
+    'payment' => 'Payment',
+    'withdrawal' => 'Withdrawal',
+    'pay_every_24hrs' => 'Pay every 24hrs',
+    'activate_user_modal_title' => 'Activate User',
+    'ensure_user_paid_message' => 'Ensure user has been paid before confirming payment!!',
+    'confirm_payment_made' => 'Confirm Payment Made!',
+
+    // Pending page
+    'pending_users' => 'Pending Users',
+    'total_users' => 'Total Users',
+    'activated' => 'Activated',
+    'activate' => 'Activate',
+    'referrer' => 'Referrer',
+    'activate_user' => 'Activate User',
+
+    // Send Mail page
+    'send_mail' => 'Send Mail',
+    'subject' => 'Subject',
+    'message' => 'Message',
+    'send' => 'Send',
+
+    // Transactions page
+    'incoming_and_outgoing' => 'Incoming and Outgoing',
+
+    // Welcome page
+    'mlm_solution' => 'SOLUTION MLM',
+    'docs' => 'DOCS',
+    'twitter' => 'TWITTER',
+    'github' => 'GITHUB',
+
+    // Example Component
+    'example_component_title' => 'Example Component',
+    'example_component_text' => 'I\'m an example component.',
 ];
