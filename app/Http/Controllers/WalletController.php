@@ -53,8 +53,8 @@ class WalletController extends Controller
             return redirect()->back()->with('error', 'Invalid amount provided.');
         }
 
-        if ($amount < 1000) {
-            return redirect()->back()->with('error', 'Minimum withdrawal amount is 1000.');
+        if ($amount < 100) {
+            return redirect()->back()->with('error', 'Minimum withdrawal amount is 100.');
         }
 
         if ($wallet->amount < $amount) {

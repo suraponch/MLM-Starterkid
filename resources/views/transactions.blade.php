@@ -32,7 +32,7 @@
                                     <tr>
                                     <td>{{$tran->username}}</td>
                                         <td>{{$tran->type}}</td>
-                                        <td>{{$tran->amount}}</td>
+                                        <td>฿{{$tran->amount}}</td>
                                         <td>{{$tran->status}}</td>
                                         <td>{{$tran->created_at}}</td>
                                     </tr>

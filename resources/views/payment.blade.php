@@ -31,13 +31,12 @@
                                         @foreach ($users as $user)
                                             <tr>
                                                 <td>{{$user->name}}</td>
-                                                <td>₦{{ !$user ? 0 : number_format($user->amount) }}</td>
-                                               
+                                                <td>฿{{ !$user ? 0 : number_format($user->amount) }}</td>
                                                 <td>{{$user->username}}</td>
                                                 <td>{{$user->email}}</td>
                                                 <td>{{$user->phone}}</td>
                                                 <td>{{$user->level}}</td>
-                                                <td>₦{{ !$user ? 0 : number_format($user->balance) }}</td>
+                                                <td>฿{{ !$user ? 0 : number_format($user->balance) }}</td>
                                                 <td>
                                                 <button  data-toggle="modal" data-target="#daModal{{$user->id}}" class="btn btn-success btn-sm"><i class="fa fa-lg fa-eye"></i></button>
                                                 </td>

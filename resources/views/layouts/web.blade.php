@@ -184,19 +184,21 @@
                             </ul>
                         </li> -->
                         <li class="nav-small-cap">--- {{ __('web.personal') }}</li>
-                        <li> <a class="waves-effect waves-dark" href="/home" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">{{ __('web.dashboard') }} </span></a>
-                           
-                        </li>
-                        <li> <a class="waves-effect waves-dark" href="/wallet" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">{{ __('web.wallet') }}</span></a>
-    
-                        </li>
-                        <li> <a class=" has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">{{ __('web.referrals') }}</span></a>
+
+                        <li> <a class="waves-effect waves-dark" href="/home" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">{{ __('web.dashboard') }} </span></a></li>
+
+                        <li> <a class="waves-effect waves-dark" href="/wallet" aria-expanded="false"><i class="ti-wallet"></i><span class="hide-menu">{{ __('web.wallet') }}</span></a></li>
+
+                        <li> <a class="waves-effect waves-dark" href="/matrix" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">{{ __('web.my_referrals') }}</span></a></li>
+
+                        <li> <a class="waves-effect waves-dark" href="/not-activated" aria-expanded="false"><i class="ti-user"></i><span class="hide-menu">{{ __('web.pending_activation') }}</span></a></li>
+
+                        <!-- <li> <a class=" has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-people"></i><span class="hide-menu">{{ __('web.referrals') }}</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="/matrix">{{ __('web.my_referrals') }}</a></li>
                                 <li><a href="/not-activated">{{ __('web.pending_activation') }}</a></li>
-                    
                             </ul>
-                        </li>
+                        </li> -->
                         
                         @if(Auth::user()->role == 'admin')
 
@@ -214,7 +216,9 @@
                         <li> <a class="waves-effect waves-dark" href="/app-accounts" aria-expanded="false"><i class="fa fa-bank"></i><span class="hide-menu">{{ __('web.company_accounts') }}</span></a>
                            
                            </li>
+
                         @endif
+
                         <li class="nav-small-cap">--- {{ __('web.others') }}</li>
                         <li> <a class="waves-effect waves-dark" href="/logout" aria-expanded="false"><i class="fa fa-power-off text-danger"></i><span class="hide-menu">{{ __('web.log_out') }}</span></a></li>
                        
