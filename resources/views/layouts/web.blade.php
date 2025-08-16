@@ -17,7 +17,7 @@
     <!-- sweetalert CSS -->
     <link href="/assets/node_modules/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <link href="/assets/node_modules/icheck/skins/all.css" rel="stylesheet">
-    <link href="dist/css/pages/form-ihceck.css" rel="stylesheet">
+    <link href="dist/css/pages/form-icheck.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <![endif]-->
 </head>
 
 <body class="skin-blue fixed-layout">
@@ -94,10 +94,10 @@
                         <!-- ============================================================== -->
                         <!-- Comment -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
+                        <!--<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="ti-email"></i>
                                 <div class="notify"> <span class="heartbi"></span> <span class="poin"></span> </div>
-                            </a>
+                            </a> -->
                             <!-- <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown">
                                 <ul>
                                     <li>
@@ -119,19 +119,19 @@
                                     </li>
                                 </ul>
                             </div> -->
-                        </li>
+                        <!-- </li> -->
                         <!-- ============================================================== -->
                         <!-- End Comment -->
                         <!-- ============================================================== -->
                         <!-- ============================================================== -->
                         <!-- Messages -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="icon-note"></i>
                                 <div class="notify"> <span class="heartbi"></span> <span class="poin"></span> </div>
                             </a>
                             
-                        </li>
+                        </li> -->
                         <!-- ============================================================== -->
                         <!-- End Messages -->
                         <!-- ============================================================== -->

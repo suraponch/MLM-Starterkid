@@ -55,7 +55,7 @@ return [
 
     // Wallet page
     'balance' => 'ยอดคงเหลือ',
-    'minimum_withdrawal' => 'ถอนขั้นต่ำ: ฿1000',
+    'minimum_withdrawal' => 'ถอนขั้นต่ำ: ฿100',
     'amount' => 'จำนวน',
     'withdraw' => 'ถอน',
     'add_account' => 'เพิ่มบัญชี',
@@ -85,12 +85,12 @@ return [
 
     // Dashboard / Home2 Page (Replaces existing Home2 page section)
     'dashboard_title' => 'แดชบอร์ด',
-    'activate_account' => 'เปิดใช้งานบัญชีของคุณด้วย ₦:activation_fee เพื่อรับ ₦:earning (พร้อมโบนัสแนะนำ); บัญชีที่ไม่ได้เปิดใช้งานจะถูกลบใน 2 วัน คลิก <b>"วิธีการ?"</b> ด้านล่าง',
-    'upgrade_level' => 'อัปเกรดเป็นระดับ :level ด้วย ₦:upgrade_fee เพื่อรับ ₦:earning ตรวจสอบยอดเงินในกระเป๋าเงินเพื่อดูว่าคุณมีเพียงพอที่จะอัปเกรดหรือไม่!',
+    'activate_account' => 'เปิดใช้งานบัญชีของคุณด้วย ฿:activation_fee เพื่อรับ ฿:earning (พร้อมโบนัสแนะนำ); บัญชีที่ไม่ได้เปิดใช้งานจะถูกลบใน 2 วัน คลิก <b>"วิธีการ?"</b> ด้านล่าง',
+    'upgrade_level' => 'อัปเกรดเป็นระดับ :level ด้วย ฿:upgrade_fee เพื่อรับ ฿:earning ตรวจสอบยอดเงินในกระเป๋าเงินเพื่อดูว่าคุณมีเพียงพอที่จะอัปเกรดหรือไม่!',
     'max_level' => 'คุณถึงระดับสูงสุดแล้ว!',
-    'upgrade_modal_title' => 'อัปเกรดเป็นระดับถัดไป (₦:amount)',
+    'upgrade_modal_title' => 'อัปเกรดเป็นระดับถัดไป (฿:amount)',
     'select_upgrade_method' => 'เลือกวิธีการอัปเกรดที่ต้องการ!!',
-    'upgrade_with_wallet' => 'อัปเกรดด้วยยอดเงินในกระเป๋า - <em><b>₦:amount</b></em>',
+    'upgrade_with_wallet' => 'อัปเกรดด้วยยอดเงินในกระเป๋า - <em><b>฿:amount</b></em>',
     'upgrade_with_card' => 'อัปเกรดด้วยบัตรเครดิต',
     'user_summary' => 'สรุปข้อมูลผู้ใช้',
     'activate_your_account' => 'เปิดใช้งานบัญชีของคุณ',
@@ -107,6 +107,7 @@ return [
     'js_processing' => 'กำลังดำเนินการ...',
     'js_transaction_failed' => 'การทำธุรกรรมล้มเหลว: :error',
     'js_activate_button' => 'เปิดใช้งานบัญชีของคุณ',
+    'make_payment' => 'การชำระเงิน',
 
     // How it works Table
     'hwi_l1_title' => 'ระดับ 1: (เปิดใช้งาน). จ่าย ฿2000',

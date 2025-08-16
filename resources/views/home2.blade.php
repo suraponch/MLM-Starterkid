@@ -157,9 +157,9 @@ $upgradeParams = [
                             <tr><td>@lang('web.hwi_l4_title')</td></tr>
                             <tr><td>@lang('web.hwi_l4_desc')</td></tr>
                             <tr><td>@lang('web.hwi_l5_title')</td></tr>
-                            <tr><td>{!! __('web.hwi_l5_desc') !!}</td></tr>
+                            <tr><td>@lang('web.hwi_l5_desc')</td></tr>
                             <tr><td>@lang('web.hwi_l6_title')</td></tr>
-                            <tr><td>{!! __('web.hwi_l6_desc') !!}</td></tr>
+                            <tr><td>@lang('web.hwi_l6_desc')</td></tr>
                             <tr><td>@lang('web.hwi_bonus_title')</td></tr>
                             <tr><td>@lang('web.hwi_bonus_desc')</td></tr>
                         </tbody>

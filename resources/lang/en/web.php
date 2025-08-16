@@ -55,7 +55,7 @@ return [
 
     // Wallet page
     'balance' => 'Balance',
-    'minimum_withdrawal' => 'Minimum Withdrawal: ₦1000',
+    'minimum_withdrawal' => 'Minimum Withdrawal: ฿100',
     'amount' => 'Amount',
     'withdraw' => 'Withdraw',
     'add_account' => 'Add Account',
@@ -85,12 +85,12 @@ return [
 
     // Dashboard / Home2 Page (Cleaned up and consolidated)
     'dashboard_title' => 'Dashboard',
-    'activate_account' => 'Activate your account with ₦:activation_fee to earn ₦:earning (plus referral bonus) ; accounts not activated is deleted in 2days. Click <b>"How To?"</b> bellow.',
-    'upgrade_level' => 'Upgrade to Level :level with ₦:upgrade_fee to earn ₦:earning. Check wallet balance to see if you have enough to upgrade!',
+    'activate_account' => 'Activate your account with ฿:activation_fee to earn ฿:earning (plus referral bonus) ; accounts not activated is deleted in 2days. Click <b>"How To?"</b> bellow.',
+    'upgrade_level' => 'Upgrade to Level :level with ฿:upgrade_fee to earn ฿:earning. Check wallet balance to see if you have enough to upgrade!',
     'max_level' => 'You have reached the maximum level!',
-    'upgrade_modal_title' => 'Upgrade to next Level (₦:amount)',
+    'upgrade_modal_title' => 'Upgrade to next Level (฿:amount)',
     'select_upgrade_method' => 'Select Prefered Upgrade method!!',
-    'upgrade_with_wallet' => 'Upgrade with Wallet Balance - <em><b>₦:amount</b></em>',
+    'upgrade_with_wallet' => 'Upgrade with Wallet Balance - <em><b>฿:amount</b></em>',
     'upgrade_with_card' => 'Upgrade with Credit Card',
     'user_summary' => 'User Summary',
     'activate_your_account' => 'Activate Your Account',
@@ -107,6 +107,7 @@ return [
     'js_processing' => 'Processing...',
     'js_transaction_failed' => 'Transaction failed: :error',
     'js_activate_button' => 'Activate Your Account',
+    'make_payment' => 'Payment',
 
     // How it works Table
     'hwi_l1_title' => 'LEVEL 1: (Activation). Pay ฿2000',
